@@ -20,7 +20,7 @@
 
 ```bash
 cd themes
-git clone https://github.com/theme-particlex/hexo-theme-particlex.git particlex --depth=1
+git clone https://github.com/Serina765P/hexo-theme-particlex.git particlex --depth=1
 ```
 
 然后在根目录 `_config.yml` 设置主题为 ParticleX 即可。
