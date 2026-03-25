@@ -6,7 +6,8 @@ avatar: /images/avatar.jpg
 
 # Home page background image
 background:
-    - /images/background.jpg
+    - /images/background.webp
+# https://pic1.imgdb.cn/item/6932d1f2d1e741a32bf46327.webp
 
 # Loading image
 loading: /images/loading.gif
@@ -49,15 +50,32 @@ menu:
 card:
     enable: true
     description: |
-        Description
-        ...
+        个人简介
+        这里芹菜P，偶像大师新人制作人，涉猎广而不精的业余爱好者。
+        写博客记录生活和学习的点滴。
     iconLinks:
+        Github:
+            name: github
+            theme: brands
+            link: https://github.com/Serina765P
+        QQ:
+            name: qq
+            theme: brands
+            link: http://wpa.qq.com/msgrd?v=3&uin=2241439211&site=qq&menu=yes
+        X:
+            name: x-twitter
+            theme: brands
+            link: https://x.com/Serina765P
+        mail:
+            name: envelope
+            theme: solid
+            link: mailto:serinap@qq.com
     friendLinks:
-        Argvchs: https://argvchs.github.io
+        【偶像大师中文维基】: https://wikimas.org
 
 # Footer info
 footer:
-    since: 2022
+    since: 2025
     # Customize the server domain name ICP
     ICP:
         enable: false
@@ -96,19 +114,19 @@ search:
 # giscus
 # https://github.com/giscus/giscus
 giscus:
-    enable: false
+    enable: true
     src: https://giscus.app/client.js
-    repo:
-    repoID:
-    category:
-    categoryID:
+    repo: Serina765P/SerinaP-Blog
+    repoID: R_kgDOQi6hvw
+    category: Announcements
+    categoryID: DIC_kwDOQi6hv84CzbAr
     mapping: pathname
     strict: 0
     reactionsEnabled: 1
     emitMetadata: 0
-    inputPosition: bottom
-    theme: preferred_color_scheme
-    lang:
+    inputPosition: top
+    theme: light
+    lang: zh-CN
 
 # Gitalk
 # https://github.com/gitalk/gitalk
@@ -156,3 +174,13 @@ twikoo:
     region:
     path: location.pathname
     lang:
+
+# Table of Contents
+toc:
+    enable: true
+    placeholder: "目录"
+
+# Per-post override example:
+# ---
+# toc: false
+# ---

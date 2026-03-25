@@ -1,20 +1,22 @@
-# Hexo-Theme-ParticleX
+# Hexo-Theme-ParticleX Plus
 
-[ParticleX](https://github.com/theme-particlex/hexo-theme-particlex) 主题，诞生原因是因为原来的 [Particle](https://github.com/korilin/hexo-theme-particle) 主题不维护了，但是我觉得还是很好的。
+[ParticleX Plus](https://github.com/Serina765P/hexo-theme-particlexplus) 主题，诞生原因是因为原来的 [ParticleX](https://github.com/theme-particlex/hexo-theme-particlex) 主题不维护了，但是我觉得还是很好的。
 
-原来用的是 Vue 2 + Ant Design Vue 1，现更新到 Vue 3，去除 Ant Design Vue 采用自定义样式，图标更改为 Font Awesome 6，CDN 改为 ZStatic。
+使用 [OpenCode](https://opencode.ai/) Vibe Coding 进行修改。
 
-原项目 `README.md` 里说：
+**主要特性：**
+- 目录侧栏 (TOC)：桌面端 sticky 侧栏 + 移动端浮动按钮
+- 首页背景贯穿全页 + 滚动模糊效果 （参考 [particleXMod](https://github.com/lijunjie2232/particleXMod) ）
+- 代码块语言自动识别增强
+- HTML 折叠卡片美化样式
+- 字号大了1px（我是老年人）
+- 页脚稳定性修复
 
-> 目前有 Full、Night 和 Maiden **两个**主题样式。
-
-但是更改后只有一种了，如果你想改颜色就在 `main.css` 里替换吧。
+**自用，如有问题还请指正。**
 
 # 1. 演示
 
--   [GitHub Pages](https://argvchs.github.io)
--   [Netlify](https://argvchs.netlify.app)
--   [Vercel](https://argvchs.vercel.app)
+-   [SerinaP’s Blog](https://blog.serinap.top) - 个人博客
 
 # 2. 安装
 
@@ -23,10 +25,10 @@ cd themes
 git clone https://github.com/Serina765P/hexo-theme-particlexplus.git particlexplus --depth=1
 ```
 
-然后在根目录 `_config.yml` 设置主题为 ParticleX 即可。
+然后在根目录 `_config.yml` 设置主题为 ParticleX Plus 即可。
 
 ```yaml
-theme: particlex
+theme: particlexplus
 ```
 
 ## 2.1. 关闭自带代码高亮
@@ -351,6 +353,78 @@ twikoo:
     path: location.pathname
     lang:
 ```
+
+### 3.5. 目录侧栏 (TOC)
+
+#### 3.5.1. 基本配置
+
+主题提供目录侧栏功能，桌面端显示在文章右侧，移动端显示为浮动按钮。
+
+```yaml
+# Table of Contents
+toc:
+    enable: true
+    placeholder: "目录"
+```
+
+- `enable`: 是否启用目录侧栏
+- `placeholder`: 目录标题文字
+
+**显示规则：**
+- 屏幕宽度 ≥ 1380px：显示右侧 sticky 侧边栏
+- 屏幕宽度 < 1380px：显示右下角浮动按钮，点击展开抽屉
+
+#### 3.5.2. 文章级开关
+
+可以在单篇文章的 Front-matter 中覆盖全局设置：
+
+```yaml
+---
+title: 示例文章
+toc: false  # 禁用此文章的目录
+---
+```
+
+```yaml
+---
+title: 示例文章
+toc: true   # 强制启用此文章的目录
+---
+```
+
+### 3.6. 首页背景
+
+主题对首页背景进行了增强设计：
+
+- **贯穿全页背景**：背景图从顶部 hero 区域延伸到整个首页，不再局限于顶部
+- **滚动模糊效果**：随着向下滚动，背景逐渐变得模糊 (0px → 12px)，营造景深效果
+- **页码区背景**：首页底部的页码分页区域增加了半透明背景卡片
+- **页脚背景**：footer 区域增加了半透明背景卡片，提升可读性
+
+此功能为默认行为，无需额外配置。
+
+### 3.7. HTML 折叠卡片
+
+主题为 `<details>` + `<summary>` HTML 标签添加了美观的折叠样式。
+
+**使用方式（Markdown 中直接插入 HTML）：**
+
+```html
+<details>
+<summary>点击展开查看详情</summary>
+
+这里是折叠的内容...
+
+</details>
+```
+
+**样式特性：**
+- 卡片式边框和背景
+- 可点击的标题栏带箭头指示器
+- 展开/收起时箭头旋转动画
+- hover 效果提示可交互
+
+无需额外配置，在文章中直接使用 `<details>` 标签即可自动应用样式。
 
 # 4. 写在最后
 
